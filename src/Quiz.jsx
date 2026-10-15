@@ -9,6 +9,7 @@ function randomFunc() {
 const Quiz = ({ quizData, currentQuestion, setCurrentQuestion }) => {
   const [selected, setSelected] = useState(null);
   const [score, setScore] = useState(0);
+  const [showResult, setShowResult] = useState(false);
   const options = useMemo(() => {
     return [
       ...quizData[currentQuestion].incorrectAnswers,
@@ -17,12 +18,16 @@ const Quiz = ({ quizData, currentQuestion, setCurrentQuestion }) => {
   }, [quizData, currentQuestion]);
 
   const nextQuestion = () => {
-    setCurrentQuestion((prev) => prev + 1);
-    setSelected(null);
-    const allButtons = document.querySelectorAll(".optionBtn");
-    allButtons.forEach((button) => {
-      button.classList.remove("correct", "incorrect");
-    });
+    if (currentQuestion < quizData.length - 1) {
+      setCurrentQuestion((prev) => prev + 1);
+      setSelected(null);
+      const allButtons = document.querySelectorAll(".optionBtn");
+      allButtons.forEach((button) => {
+        button.classList.remove("correct", "incorrect");
+      });
+    } else {
+      setShowResult(true);
+    }
   };
 
   const handleOptionClick = (e) => {
@@ -55,7 +60,13 @@ const Quiz = ({ quizData, currentQuestion, setCurrentQuestion }) => {
         </p>
         <span className="score">Score: {score}</span>
       </div>
-      {currentQuestion < quizData.length ? (
+      {showResult ? (
+        <div className="quizEnd">
+          <h2>Quiz Completed!</h2>
+          <p>Final Score: {score}</p>
+          <FinalStatement score={score} quizLength={quizData.length} />
+        </div>
+      ) : (
         <>
           <h2>
             {currentQuestion + 1}. {quizData[currentQuestion].question.text}
@@ -73,12 +84,6 @@ const Quiz = ({ quizData, currentQuestion, setCurrentQuestion }) => {
             Next Question
           </button>
         </>
-      ) : (
-        <div className="quizEnd">
-          <h2>Quiz Completed!</h2>
-          <p>Final Score: {score}</p>
-          <FinalStatement score={score} quizLength={quizData.length} />
-        </div>
       )}
     </>
   );

@@ -152,3 +152,14 @@ h2 {
 .errorMessage p {
   font-size: 2rem;
 }
+.quizEnd {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.quizEnd h2 {
+  font-size: 3rem;
+  color: var(--primary-color);
+}
