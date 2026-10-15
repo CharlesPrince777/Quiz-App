@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --text-color: #eef4ed;
+  --light-color: #8da9ca;
+  --primary-color: #e90247;
+  --secondary-color: #134074;
+  --accent-color: #13315c;
+  --dark-color: #0b2545;
+  --correct-color: #4caf50;
+  --incorrect-color: #f34336;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: var(--dark-color);
+  color: var(--text-color);
+  font-size: 1.6rem;
+  display: grid;
+  place-items: center;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+#root {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  width: 100%;
+}
+.App {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+.quizApp {
+  width: 90%;
+  max-width: 60rem;
+  min-height: 40rem;
+  background-color: var(--secondary-color);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+h1 {
+  font-family: "Kaushan Script", cursive;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 1rem;
+}
+.loaderContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+.loader {
+  margin-bottom: 1rem;
+  width: 7rem;
+  height: 7rem;
+  border: 7px solid var(--light-color);
+  border-top: 7px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.quizHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.optionBtn {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.optionBtn:hover {
+  background-color: var(--primary-color);
+}
+.correct {
+  background-color: var(--correct-color) !important;
+}
+.incorrect {
+  background-color: var(--incorrect-color) !important;
+}
+.nextBtn {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.errorMessage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--incorrect-color);
+}
+.errorMessage svg {
+  font-size: 10rem;
+}
+.errorMessage p {
+  font-size: 2rem;
+}
