@@ -26,6 +26,7 @@ const Quiz = ({ quizData, currentQuestion, setCurrentQuestion }) => {
   };
 
   const handleOptionClick = (e) => {
+    if (selected !== null) return;
     const clickedOption = e.target;
     const correctAnswer = quizData[currentQuestion].correctAnswer;
     const allButtons =
@@ -54,7 +55,7 @@ const Quiz = ({ quizData, currentQuestion, setCurrentQuestion }) => {
         </p>
         <span className="score">Score: {score}</span>
       </div>
-      {currentQuestion < quizData.length - 1 ? (
+      {currentQuestion < quizData.length ? (
         <>
           <h2>
             {currentQuestion + 1}. {quizData[currentQuestion].question.text}
