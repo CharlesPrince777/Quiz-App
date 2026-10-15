@@ -18,7 +18,7 @@ const FinalStatement = ({ score, quizLength }) => {
       finalScore = `You scored ${(score / quizLength) * 100}%!`;
       break;
   }
-  return <h2>{finalScore}</h2>;
+  return <h3>{finalScore}</h3>;
 };
 
 export default FinalStatement;
