@@ -1,16 +1,40 @@
-# React + Vite
+# Trivia Quiz App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive trivia quiz application built with React, Vite, and CSS. The app fetches science questions from an external trivia API and lets users test their knowledge through an interactive multiple-choice quiz.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Fetches trivia questions from an external API
+- Multiple-choice answers
+- Randomized answer options
+- Score tracking
+- Visual feedback for correct and incorrect answers
+- Loading indicator and error handling
+- Final score display
+- Responsive interface
 
-## React Compiler
+## Technologies
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- JavaScript
+- CSS3
+- Vite
+- The Trivia API
+- React Icons
 
-## Expanding the ESLint configuration
+## Live Demo
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+[View Quiz App](https://quiz-app-73yi.vercel.app/)
+
+## Getting Started
+
+- Clone the repository:
+  git clone https://github.com/CharlesPrince777/Quiz-app.git
+  cd Quiz-App
+
+- Install dependencies:
+  npm install
+
+- Start the development server:
+  npm run dev
+  Open the local URL displayed in your terminal
